@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    应用vue.js-->
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h1>插值语法</h1>
+    <h3>hello.{{name}}</h3>
+    <hr/>
+<!--    插入语法和指令语法的区别-->
+<!--    插入语法位于标签之外，而指令语法位于标签之内-->
+<!--    插入语法采用{{}}，而指令v-bind：（缩写：）-->
+    <h1>指令语法</h1>
+    <a v-bind:href="url">onclick_baidu</a>
+    <a :href="msg.urll">onclick_{{msg.tim}}</a>
+
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false  //取消控制台的production的报错
+    //创建vue实例
+    new Vue({           //容器和实例的关系一对一
+        el: '#root',   //采用css定位id的方式定位root
+        data: {        //存储数据供html使用
+            name: '枸杞养生秃头熊',
+            url:'https://www.baidu.com/',
+            msg:{
+                tim:'暴力点击',
+                urll:'https://cn.bing.com/'
+            }
+        }
+    })
+</script>
+</body>
+</html>
