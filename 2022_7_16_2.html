@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns:v-model="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="vue.js"></script>
+    <script type="text/javascript"> //取消控制台的production的报错
+    Vue.config.productionTip = false
+    </script>
+</head>
+
+<body>
+<!--<div id="root">-->
+<!--    单项数据绑定：<input type="text" v-bind:value="name">-->
+<!--    双向数据绑定：<input type="text" v-model:value="name">-->
+<!--</div>-->
+<!--v-bind和v-model的简写方式-->
+<div id="root">
+    单项数据绑定：<input type="text" :value="name">
+    双向数据绑定：<input type="text" v-model="name">
+</div>
+<!--其中v-model服务于表单形式，通过value对其进行改变。-->
+<!--一般在输入类标签中使用，如：input 单选框 双选框 text文本-->
+<!--<h2 v-model：x="name">非表单形式</h2>-->
+
+</body>
+<script type="text/javascript">
+    Vue.config.productionTip = false  //取消控制台的production的报错
+    //创建vue实例
+    new Vue({
+        el: '#root',
+        data: {
+            name: '养生枸杞秃头熊'
+        }
+    })
+</script>
+</html>
