@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    应用vue.js-->
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <!--    //通过id中root定义vue实例中的el定位并获得data的数据-->
+    <!--    其中{{}}可以写js表达式，而非js语句-->
+    <h1>hello.{{ name }}，{{1+1*1}}，{{Date.now()}}</h1>
+</div>
+<script type="text/javascript">
+    Vue.config.productionTip = false  //取消控制台的production的报错
+    //创建vue实例
+    const x = new Vue({           //容器和实例的关系一对一
+        // **************************************
+        // el和data的第一种常规写法
+        // el: '#root',   //采用css定位id的方式定位root
+        // data: {        //存储数据供html使用
+        //     name: '养生枸杞秃头熊 '
+        // }
+        // ***************************************
+        data:function(){//data的第二种写法通过函数返回值的方式载入
+            return{
+                name:'养生枸杞秃头熊'
+            }
+        }
+    })
+    console.log(x)  //控制台输出函数的属性以及方法
+    setTimeout(() => {
+        x.$mount('#root')  //el的第二种写法通过$mount加载进入
+    }, 1000);
+</script>
+</body>
+</html>
